@@ -6,6 +6,7 @@ class Lista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         title: Text('Mi App?'),
       ),
@@ -16,7 +17,36 @@ class Lista extends StatelessWidget {
             ProductContainer(
               child: Column(
                 children: [
+                  /*
+                  Row(
+                    children: [
+                      Text(
+                        'Pivot',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                  Row(
+                    children: [
+                      Text(
+                        'Mach 5.5 Carbon TRAIL'
+                      )
+                    ],
+                  ),
+                  */
+                  SizedBox(height: 20,),
                   Image(image: AssetImage('assets/bicicleta.png')),
+                  SizedBox(height: 10,),
+                  /*
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 1),
+                    color: Colors.grey.shade100
+                  ),
+                  */
                   SizedBox(height: 10,),
                   Row(
                     children: [
@@ -24,17 +54,44 @@ class Lista extends StatelessWidget {
                         'Pivot',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20
+                          fontSize: 30,
                         ),
                       ),
-                      
                     ],
                   ),
+                  SizedBox(height: 10,),
                   Row(
                     children: [
-                      SizedBox(width: 10,),
-
+                      Text(
+                        'Mach 5.5 Carbon TRAIL'
+                      )
                     ],
+                  ),
+                  SizedBox(height: 20,),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 1),
+                    color: Colors.grey.shade100
+                  ),
+                  SizedBox(height: 20,),
+                  Row(
+                    children: [
+                      Image(image: AssetImage('assets/estrella.png'),width: 23,),
+                      SizedBox(width: 2,),
+                      Image(image: AssetImage('assets/estrella.png'),width: 23,),
+                      SizedBox(width: 2,),
+                      Image(image: AssetImage('assets/estrella.png'),width: 23,),
+                      SizedBox(width: 2,),
+                      Image(image: AssetImage('assets/estrella.png'),width: 23,),
+                      SizedBox(width: 2,),
+                      Image(image: AssetImage('assets/estrella.png'),width: 23,),
+                      SizedBox(width: 10,),
+                      Text('(8 Calificaciones)',),
+                      SizedBox(width: 10,),
+                    ],
+                  ),
+                  SizedBox(height: 20,),
+                  Text(
+                    ''
                   )
                 ],
               ),
@@ -56,13 +113,12 @@ class Lista extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10,),
+
           ],
         ),
       )
     );
   }
-
-  
 }
 
 class ProductContainer extends StatelessWidget {
@@ -78,7 +134,7 @@ class ProductContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       margin: EdgeInsets.symmetric(horizontal: 15,),
       decoration: BoxDecoration(
-        color: Colors.grey.shade200,
+        color: Colors.white,
       ),
       child: child,
     );
