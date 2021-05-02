@@ -1,5 +1,8 @@
+import 'package:evaluacion1/pages/about.dart';
+import 'package:evaluacion1/pages/integrantes.dart';
 import 'package:evaluacion1/pages/lista.dart';
 import 'package:evaluacion1/pages/login.dart';
+import 'package:evaluacion1/pages/producto.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +22,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => Login(),
-        '/lista': (context) => Lista()
+        '/lista': (context) => Lista(),
+        '/about': (context) => About(),
+        '/integrantes': (context) => Integrantes(),
+        '/producto': (context) => Producto()
       }
     );
   }
