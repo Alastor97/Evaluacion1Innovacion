@@ -105,11 +105,6 @@ class Login extends StatelessWidget {
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))
             ),
-            /*shadowColor: MaterialStateColor.resolveWith(
-              (Set<MaterialState> states) {
-                return Colors.blue;
-              }
-            )*/
           ),
           onPressed: (){
             Navigator.pushNamed(context, '/lista');

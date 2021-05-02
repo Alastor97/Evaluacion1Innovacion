@@ -565,9 +565,7 @@ class ProductContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      margin: EdgeInsets.symmetric(
-        horizontal: 15,
-      ),
+      margin: EdgeInsets.symmetric(horizontal: 15,),
       decoration: BoxDecoration(
         color: Colors.white,
       ),
