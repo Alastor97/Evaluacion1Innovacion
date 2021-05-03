@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key key}) : super(key: key);
+
+  final usuario = TextEditingController();
+  final password = TextEditingController();
+
+  String usuario1 = '';
+  String password1 = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +45,7 @@ class Login extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 30.0),
           child: TextFieldContainer(
             child: TextField(
+              controller: usuario,
               decoration: InputDecoration(
                 icon: Icon (
                   Icons.person,
@@ -66,8 +72,9 @@ class Login extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 30.0),
           child: TextFieldContainer(
             child: TextField(
-             obscureText: true,
-             decoration: InputDecoration(
+              controller: password,
+              obscureText: true,
+              decoration: InputDecoration(
               icon: Icon(Icons.lock),
               hintText: 'Contraseña',
               //suffixIcon: Icon(Icons.visibility),
@@ -107,7 +114,46 @@ class Login extends StatelessWidget {
             ),
           ),
           onPressed: (){
-            Navigator.pushNamed(context, '/lista');
+            // ignore: unrelated_type_equality_checks
+            usuario1 = usuario.text;
+            password1 = password.text;
+
+            if(usuario1=='' || password1==''){
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text('Error'),
+                  content: Text('Debe ingresar un usuario y una contraseña'),
+                  actions: <Widget>[
+                    ElevatedButton(
+                      child: Text('Ok'),
+                      onPressed: (){
+                        Navigator.of(context).pop();
+                      },
+                    )
+                  ],
+                )
+              );
+            } else if (usuario1!='duoc2021' || password1!='duoc2021') {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text('Error'),
+                  content: Text('El usuario o la contraseña no son correctos'),
+                  actions: <Widget>[
+                    ElevatedButton(
+                      child: Text('Ok'),
+                      onPressed: (){
+                        Navigator.of(context).pop();
+                      },
+                    )
+                  ],
+                )
+              );
+            } else {
+              Navigator.pushNamed(context, '/lista');
+            }
+            
           },
         );
       }

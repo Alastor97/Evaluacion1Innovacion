@@ -502,7 +502,8 @@ class Lista extends StatelessWidget {
                           'D',
                           style: TextStyle(fontSize: 40, color: Colors.blue),
                         ),
-                      )),
+                      )
+                  ),
                   ListTile(
                     title: Text(
                       'Acerca de',
